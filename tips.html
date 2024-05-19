@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreQuest - Поради</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #45a049;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.3s;
+        }
+        .content:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #888;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        p {
+            color: #666;
+        }
+        .register-form, .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .register-form .form-content, .modal .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            width: 80%;
+            max-width: 400px;
+        }
+        .form-content input[type="text"], .form-content input[type="email"], .form-content input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-content input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-content input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .social-login {
+            display: block;
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .social-login:hover {
+            background-color: #2d4373;
+        }
+        .social-login + .social-login {
+            background-color: #1da1f2;
+        }
+        .social-login + .social-login:hover {
+            background-color: #0d95e8;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Путівники</a>
+    <a href="trips.html">Подорожі</a>
+    <a href="tips.html">Поради</a>
+    <a href="#" onclick="openRegisterForm()">Реєстрація</a>
+    <a href="#" onclick="openModal()">Вхід через соціальні мережі</a>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h1>Поради</h1>
+        <p>Поради для подорожей
+Планування подорожі
+Досліджуйте місце призначення: Ознайомтеся з культурою, звичаями, кліматом і основними визначними пам'ятками місця, куди ви збираєтеся поїхати. Це допоможе краще підготуватися та уникнути неприємних сюрпризів.
+Складіть маршрут: Визначте, які місця ви хочете відвідати, і складіть детальний план, враховуючи час на дорогу між об'єктами, час роботи місць і можливі дні відпочинку.
+Забронюйте заздалегідь: Рекомендується бронювати авіаквитки, готелі та квитки на визначні пам'ятки заздалегідь, щоб уникнути завищених цін і відсутності місць.
+Підготовка до поїздки
+Упаковка багажу: Зробіть список необхідних речей і спакуйтеся заздалегідь. Враховуйте клімат місця призначення і беріть з собою лише необхідне, щоб уникнути перевантаження багажу.
+Документи: Перевірте наявність усіх необхідних документів, таких як паспорт, віза (якщо необхідно), квитки та страхові поліси. Зробіть копії документів і збережіть їх окремо від оригіналів.
+Здоров'я: Перевірте, чи потрібні вам щеплення перед подорожжю, і беріть з собою необхідні ліки. Зверніться до лікаря, якщо у вас є хронічні захворювання.
+Під час подорожі
+Безпека: Дотримуйтеся правил безпеки, уникайте небезпечних районів, стежте за своїми речами і завжди будьте уважні.
+Гроші: Розподіліть гроші в різні місця (гаманець, кишені, сумка), щоб у разі втрати одного місця ви мали резерв. Використовуйте банківські картки там, де це можливо.
+Комунікації: Завжди майте при собі телефон з контактами екстрених служб та адресою місця проживання. Вивчіть кілька базових фраз місцевою мовою, щоб спілкуватися з місцевими жителями.
+Культура і традиції: Повага до місцевих звичаїв і традицій є дуже важливою. Одягайтеся відповідно до місцевих норм, дотримуйтеся правил поведінки в громадських місцях.
+Після повернення
+Розбирайте багаж одразу: Не відкладайте розпакування валізи, щоб уникнути безладу і забутих речей.
+Фото і спогади: Зберігайте і організуйте свої фотографії, ведіть щоденник або блог про подорожі, щоб зберегти спогади.
+Поділіться досвідом: Розкажіть друзям і родичам про свої враження, дайте поради і рекомендації для їх майбутніх подорожей.
+</p>
+    </div>
+</div>
+
+<!-- Вікно реєстрації -->
+<div class="register-form" id="registerForm">
+    <div class="form-content">
+        <h2>Форма реєстрації</h2>
+        <form>
+            <label for="username">Ім'я користувача:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Зареєструватися">
+        </form>
+    </div>
+</div>
+
+<!-- Модальне вікно -->
+<div class="modal" id="myModal">
+    <div class="modal-content">
+        <h2>Вхід через соціальні мережі</h2>
+        <a href="https://uk-ua.facebook.com/" class="social-login">Увійти через Facebook</a>
+        <a href="https://x.com/?lang=ru" class="social-login">Увійти через Twitter</a>
+    </div>
+</div>
+
+<script>
+    function openRegisterForm() {
+        document.getElementById('registerForm').style.display = 'flex';
+    }
+    function openModal() {
+        document.getElementById('myModal').style.display = 'flex';
+    }
+</script>
+
+</body>
+</html>

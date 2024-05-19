@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExploreQuest - Подорожі</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background-color: #4CAF50;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #45a049;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+        .content {
+            background-color: white;
+            padding: 20px;
+            margin: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            min-width: 280px;
+            transition: transform 0.3s;
+        }
+        .content:hover {
+            transform: scale(1.05);
+        }
+        h1 {
+            color: #333;
+            font-size: 2em;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px #888;
+            position: relative;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        p {
+            color: #666;
+        }
+        .register-form, .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .register-form .form-content, .modal .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+            width: 80%;
+            max-width: 400px;
+        }
+        .form-content input[type="text"], .form-content input[type="email"], .form-content input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-content input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-content input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .social-login {
+            display: block;
+            background-color: #3b5998;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            margin: 10px 0;
+        }
+        .social-login:hover {
+            background-color: #2d4373;
+        }
+        .social-login + .social-login {
+            background-color: #1da1f2;
+        }
+        .social-login + .social-login:hover {
+            background-color: #0d95e8;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="index.html">Путівники</a>
+    <a href="trips.html">Подорожі</a>
+    <a href="tips.html">Поради</a>
+    <a href="#" onclick="openRegisterForm()">Реєстрація</a>
+    <a href="#" onclick="openModal()">Вхід через соціальні мережі</a>
+</nav>
+
+<div class="container">
+    <div class="content">
+        <h1>Подорожі</h1>
+        <h2>Україна<h2>
+        <p>
+Найбільша країна в Європі: Україна є найбільшою країною, повністю розташованою в Європі, з площею приблизно 603,628 квадратних кілометрів.
+Культурна спадщина: Україна має багату культурну спадщину, включаючи численні замки, собори, і національні парки. Зокрема, Софійський собор у Києві є об'єктом Всесвітньої спадщини ЮНЕСКО.
+Сільське господарство: Україна відома як "житниця Європи" завдяки своїм родючим чорноземам, які є одними з найкращих у світі для вирощування зернових культур.
+Технологічні досягнення: Українські вчені зробили значний внесок у розвиток світової науки і техніки, включаючи космічні дослідження та авіабудування.<p>
+    <img src="https://eufordigital.eu/wp-content/uploads/2019/08/Ukraine-1-wpv_1920x645_center_center.jpg" />
+<h2>Америка(США)<h2>
+Демократія та Конституція: США є однією з найстаріших сучасних демократій зі стабільною конституційною системою управління, яка була прийнята в 1787 році.
+Економічна потужність: США мають найбільшу економіку у світі з ВВП понад 20 трильйонів доларів, відомі своїми інноваціями в таких сферах, як технології, фінанси та розваги.
+Природні чудеса: США мають багато національних парків і природних чудес, включаючи Великий Каньйон, Єллоустоун і Йосемітський національний парк.
+Культурне розмаїття: США є однією з найбільш культурно різноманітних країн світу, з населенням, яке складається з численних етнічних та культурних груп.<p><img src="https://opis-cdn.tinkoffjournal.ru/mercury/in-us-entry-rules.88ucr5ne81q3..jpg" />
+<h2>Греція<h2>
+Колиска західної цивілізації: Греція вважається колискою західної цивілізації, давши світу такі філософські системи, як платонізм і арістотелізм, та демократію.
+Міфи та легенди: Грецька міфологія, з її багатством богів, героїв та міфів, значно вплинула на літературу, мистецтво та культуру по всьому світу.<p><img src="https://aristeya.com.ua/wp-content/uploads/2024/01/greece-3384386_1920.jpg" />
+Архітектурна спадщина: Греція славиться своїми давніми архітектурними пам'ятками, такими як Парфенон у Афінах та театр в Епідаврі.
+Сонце і море: Греція має понад 6,000 островів, з яких приблизно 227 є населеними, і відома своїми красивими пляжами і чистим морем.
+<h2>Італія<h2>
+Римська імперія: Італія була центром Римської імперії, однієї з наймогутніших цивілізацій у світі, яка значно вплинула на західну культуру та правову систему.
+Мистецтво і Відродження: Італія є батьківщиною багатьох видатних художників, таких як Леонардо да Вінчі, Мікеланджело та Рафаель, і є центром епохи Відродження.
+Кулінарна спадщина: Італійська кухня є однією з найпопулярніших у світі, відомою своїми піцою, пастою, і вином.
+Мода: Італія є одним з центрів світової моди, з такими відомими брендами, як Gucci, Prada, та Versace, і містами, як Мілан, що є однією з "модних столиць" світу.</p><img src="https://www.studyitalian.ru/uploads/server/awUBqpEUsGMpgkRW.jpg" />
+    </div>
+</div>
+
+<!-- Вікно реєстрації -->
+<div class="register-form" id="registerForm">
+    <div class="form-content">
+        <h2>Форма реєстрації</h2>
+        <form>
+            <label for="username">Ім'я користувача:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <input type="submit" value="Зареєструватися">
+        </form>
+    </div>
+</div>
+
+<!-- Модальне вікно -->
+<div class="modal" id="myModal">
+    <div class="modal-content">
+        <h2>Вхід через соціальні мережі</h2>
+        <a href="https://uk-ua.facebook.com/" class="social-login">Увійти через Facebook</a>
+        <a href="https://x.com/?lang=ru" class="social-login">Увійти через Twitter</a>
+    </div>
+</div>
+
+<script>
+    function openRegisterForm() {
+        document.getElementById('registerForm').style.display = 'flex';
+    }
+    function openModal() {
+        document.getElementById('myModal').style.display = 'flex';
+    }
+</script>
+
+</body>
+</html>

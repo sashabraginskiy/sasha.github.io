@@ -1,0 +1,9 @@
+function openRegisterForm() {
+    var registerForm = document.getElementById("registerForm");
+    registerForm.style.display = "block";
+}
+
+function openModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "block";
+}
